@@ -66,6 +66,7 @@ export default function Architectural() {
             <Image
               src="/home/logoForHome.png"
               alt="Логотип INSAAN"
+              loading="eager"
               width={300}
               height={300}
               className="w-full h-auto"
@@ -86,6 +87,7 @@ export default function Architectural() {
                     alt={item.title}
                     width={64}
                     height={64}
+                    loading="eager"
                     className="w-full h-full object-contain"
                     quality={80}
                   />

@@ -1,8 +1,28 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Reviews() {
+  // Add custom animations to Tailwind config
+  const fadeIn = `@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
+  `;
+  
+  useEffect(() => {
+    // Add the animation styles to the document
+    const style = document.createElement('style');
+    style.textContent = fadeIn;
+    document.head.appendChild(style);
+    
+    return () => {
+      // Clean up on unmount
+      document.head.removeChild(style);
+    };
+  }, []);
   // Sample review data
   const reviews = [
     {
@@ -42,18 +62,8 @@ export default function Reviews() {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(2);
   const [animating, setAnimating] = useState(false);
-
-  // Auto-rotate reviews every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!animating) {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-      }
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [animating, reviews.length]);
 
   const handleReviewClick = (index) => {
     if (index !== activeIndex && !animating) {
@@ -64,14 +74,6 @@ export default function Reviews() {
     }
   };
 
-  // Memoize the ordered reviews to avoid unnecessary recalculations
-  const orderedReviews = useMemo(() => {
-    const result = [...reviews];
-    const activeReview = result.splice(activeIndex, 1)[0];
-    result.unshift(activeReview);
-    return result;
-  }, [reviews, activeIndex]);
-
   return (
     <main className="w-full max-w-5xl mx-auto py-8 md:py-12 lg:py-16 px-4 relative space-y-4 md:space-y-5">
       <h1 className="textNormal5 text-center text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6">
@@ -79,62 +81,70 @@ export default function Reviews() {
       </h1>
       
       {/* Review section */}
-      <div className="bg-gray-100 rounded-lg p-4 sm:p-6 md:p-8 mb-4 md:mb-8 relative">
+      <div className="bg-gray-100 rounded-lg p-4 sm:p-6 md:p-8 mb-4 md:mb-8 relative overflow-hidden">
         <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8 text-3xl sm:text-4xl font-serif text-gray-800">
           "
         </div>
-        <div className="transition-opacity duration-500">
+        <div 
+          key={activeIndex} 
+          className="animate-fadeIn transition-all duration-500 ease-in-out"
+        >
           <p className="text-gray-700 text-base sm:text-lg mt-4 sm:mt-6 mb-4 sm:mb-6 pl-4 sm:pl-6 relative">
             {reviews[activeIndex].text}
           </p>
         </div>
-        <div className="absolute -bottom-2 left-8 sm:left-10 transform rotate-45 w-4 h-4 bg-gray-100"/>
       </div>
       
       {/* User avatars section - Scrollable on mobile */}
-      <div className="flex overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:justify-start items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
-        {orderedReviews.map((review, index) => {
-          const isActive = index === 0;
-          const originalIndex = reviews.findIndex((r) => r.id === review.id);
-
-          return (
-            <div key={review.id} className="flex-shrink-0">
-              {isActive ? (
-                <button
-                  onClick={() => handleReviewClick(originalIndex)}
-                  className="flex items-center gap-2 sm:gap-3 focus:outline-none transition-all duration-300"
-                  aria-label={`View review from ${review.name}`}
-                >
-                  <img
+      <div className="flex overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
+        {reviews.map((review, index) => (
+          <div key={review.id} className="flex-shrink-0">
+            {index === activeIndex ? (
+              <button
+                onClick={() => handleReviewClick(index)}
+                className="flex items-center gap-2 sm:gap-3 focus:outline-none transition-all duration-300 scale-110 transform"
+                aria-label={`View review from ${review.name}`}
+              >
+                <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                  <Image
                     src={review.avatar}
                     alt={review.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-blue-500"
+                    fill
+                    sizes="(max-width: 640px) 40px, 48px"
+                    className="rounded-full object-cover border-2 border-blue-500 animate-pulse shadow-lg"
+                    loading="eager"
+                    priority
                   />
-                  <div className="flex flex-col">
-                    <h3 className="font-medium text-gray-900 text-left text-sm sm:text-base">
-                      {review.name}
-                    </h3>
-                    <p className="text-gray-600 text-left text-xs sm:text-sm">
-                      {review.position}
-                    </p>
-                  </div>
-                </button>
-              ) : (
-                <button
-                  onClick={() => handleReviewClick(originalIndex)}
-                  className="opacity-60 hover:opacity-80 transition-all duration-300 focus:outline-none"
-                  aria-label={`View review from ${review.name}`}
-                >
-                  <img
+                </div>
+                <div className="flex flex-col animate-fadeIn">
+                  <h3 className="font-medium text-gray-900 text-left text-sm sm:text-base">
+                    {review.name}
+                  </h3>
+                  <p className="text-gray-600 text-left text-xs sm:text-sm">
+                    {review.position}
+                  </p>
+                </div>
+              </button>
+            ) : (
+              <button
+                onClick={() => handleReviewClick(index)}
+                className="opacity-60 hover:opacity-80 hover:scale-105 transition-all duration-300 focus:outline-none transform"
+                aria-label={`View review from ${review.name}`}
+              >
+                <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                  <Image
                     src={review.avatar}
                     alt={review.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-transparent"
+                    fill
+                    sizes="(max-width: 640px) 40px, 48px"
+                    className="rounded-full object-cover border-2 border-transparent hover:border-gray-300"
+                    loading="eager"
                   />
-                </button>
-              )}
-            </div>
-          );
-        })}
+                </div>
+              </button>
+            )}
+          </div>
+        ))}
       </div>
 
       {/* Indicator dots for mobile (optional) */}

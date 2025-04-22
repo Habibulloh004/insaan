@@ -67,7 +67,7 @@ export default function Header() {
             href={"/contact"}
             className="text-black text-end font-bold text-md lg:text-lg 2xl:text-xl"
           >
-            Главная страница
+            Связаться с нами
           </Link>
         </section>
       </section>

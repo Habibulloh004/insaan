@@ -26,7 +26,7 @@ export default function VideoContainer() {
             className="h-full"
             classNameImg="object-cover w-full md:h-[500px]"
             animationStyle="from-center"
-            videoSrc="/video/nature.mp4"
+            videoSrc="https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf"
             thumbnailSrc="/home/videoImage.png"
             thumbnailAlt="Hero Video"
           />

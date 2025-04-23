@@ -52,8 +52,8 @@ export default function AboutUs() {
         cardPosition="right-bottom"
         showCard={false}
       />
+      
       <Architectural workers={true} />
-
       <VideoContainer />
     </main>
   );

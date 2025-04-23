@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <Hero
-        image="homeImage.jpg"
+        image="homeImage.webp"
         title="Все услуги для людей"
         description="Документация, планировка и прочие услуги в сфере строительства."
         cardTitle="Свяжитесь с нами чтобы узнать подробнее"

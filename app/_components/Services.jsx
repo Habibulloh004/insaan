@@ -7,37 +7,37 @@ export const servicesData = [
   {
     title: "Регистрация документов",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Кадастровые документы",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Архитектурные проекты",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Регистрация документов",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Кадастровые документы",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Архитектурные проекты",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
   {
     title: "Регистрация документов",
     desc: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-    image: "/home/services1.jpg",
+    image: "/home/services1.webp",
   },
 ];
 

@@ -39,24 +39,24 @@ export default function Construction() {
   const certificates = [
     {
       images: [
-        { src: "/certificates/litsenziya1.png", alt: "Litsenziya 1" },
-        { src: "/certificates/litsenziya2.png", alt: "Litsenziya 2" },
+        { src: "/certificates/litsenziya1.webp", alt: "Litsenziya 1" },
+        { src: "/certificates/litsenziya2.webp", alt: "Litsenziya 2" },
       ],
     },
     {
       images: [
-        { src: "/certificates/tasdiqnoma1.png", alt: "Tasdiqnoma 1" },
-        { src: "/certificates/tasdiqnoma2.png", alt: "Tasdiqnoma 2" },
+        { src: "/certificates/tasdiqnoma1.webp", alt: "Tasdiqnoma 1" },
+        { src: "/certificates/tasdiqnoma2.webp", alt: "Tasdiqnoma 2" },
       ],
     },
     {
-      images: [{ src: "/certificates/litsenziya3.png", alt: "Litsenziya 3" }],
+      images: [{ src: "/certificates/litsenziya3.webp", alt: "Litsenziya 3" }],
     },
   ];
   return (
     <main className="space-y-12">
       <Hero
-        image="sertificateImage.jpg"
+        image="sertificateImage.webp"
         title="Лицензия на строительство и строителей"
         description=""
         cardTitle="Закажите услугу сейчас"

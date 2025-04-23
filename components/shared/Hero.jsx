@@ -1,3 +1,5 @@
+"use client"
+
 // components/shared/Hero.jsx
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +14,6 @@ export default function Hero({
   cardButtonLink = "/contact",
   imagePosition = "bottom",
   gradientDirection = "to-r",
-  gradientFrom = "white",
-  gradientTo = "transparent",
   textColor = "primary",
   cardPosition = "right-bottom",
   showCard = true,
@@ -43,18 +43,17 @@ export default function Hero({
         <Image
           src={`/assets/${image}`}
           alt={title || "Hero background"}
-          layout="fill"
-          objectFit="cover"
-          objectPosition={imagePosition}
-          priority
-          loading="eager"
+          fill
+          className="object-cover"
+          style={{ objectPosition: imagePosition }}
+          priority={true}
+          sizes="100vw"
+          quality={100}
         />
       </div>
 
       {/* Gradient Overlay */}
-      <div 
-        className={`absolute inset-0 bg-gradient-to-r from-white to-transparent`}
-      ></div>
+      <div className={`absolute inset-0 bg-gradient-${gradientDirection} from-white to-transparent`}></div>
 
       {/* Hero Content */}
       <section className="max-w-[1440px] w-11/12 mx-auto relative h-full py-10">

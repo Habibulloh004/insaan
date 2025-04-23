@@ -8,7 +8,7 @@ export default function Services() {
   return (
     <main className="space-y-12">
       <Hero
-        image="serviceImage.jpg"
+        image="serviceImage.webp"
         title="Мы предоставляем услуги"
         description="Создание индивидуальных архитектурных идеи и проектов."
         cardTitle="Закажите услугу сейчас"

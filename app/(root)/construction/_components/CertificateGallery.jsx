@@ -127,21 +127,21 @@ const certificates = [
   {
     // Birinchi sertifikat
     images: [
-      { src: '/certificates/litsenziya1.jpg', alt: 'Litsenziya 1' },
-      { src: '/certificates/litsenziya2.jpg', alt: 'Litsenziya 2' }
+      { src: '/certificates/litsenziya1.webp', alt: 'Litsenziya 1' },
+      { src: '/certificates/litsenziya2.webp', alt: 'Litsenziya 2' }
     ]
   },
   {
     // Ikkinchi sertifikat
     images: [
-      { src: '/certificates/tasdiqnoma1.jpg', alt: 'Tasdiqnoma 1' },
-      { src: '/certificates/tasdiqnoma2.jpg', alt: 'Tasdiqnoma 2' }
+      { src: '/certificates/tasdiqnoma1.webp', alt: 'Tasdiqnoma 1' },
+      { src: '/certificates/tasdiqnoma2.webp', alt: 'Tasdiqnoma 2' }
     ]
   },
   {
     // Uchinchi sertifikat
     images: [
-      { src: '/certificates/litsenziya3.jpg', alt: 'Litsenziya 3' }
+      { src: '/certificates/litsenziya3.webp', alt: 'Litsenziya 3' }
     ]
   }
 ];

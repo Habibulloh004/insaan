@@ -8,30 +8,30 @@ import Image from "next/image";
 export default function Contact() {
   const socials = [
     {
-      image: "/socials/facebook.png",
+      image: "/socials/facebook.webp",
       link: "https://www.facebook.com/",
     },
     {
-      image: "/socials/telegram.png",
+      image: "/socials/telegram.webp",
       link: "https://telegram.org",
     },
     {
-      image: "/socials/instagram.png",
+      image: "/socials/instagram.webp",
       link: "https://www.instagram.com/",
     },
     {
-      image: "/socials/google.png",
+      image: "/socials/google.webp",
       link: "https://www.google.com/",
     },
     {
-      image: "/socials/whatsapp.png",
+      image: "/socials/whatsapp.webp",
       link: "https://web.whatsapp.com/",
     },
   ];
   return (
     <main className="space-y-8 md:space-y-12">
       <Hero
-        image="contactImage.jpg"
+        image="contactImage.webp"
         title="Контакты"
         description="Контактная информация и способы связи с нами"
         cardTitle="Закажите услугу сейчас"

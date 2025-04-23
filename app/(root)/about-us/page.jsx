@@ -9,39 +9,39 @@ export const workerData = [
   {
     name: "Isamuxamedov Sherzod",
     level: "Korxona rahbari",
-    image: "/workers/sherzod.png",
+    image: "/workers/sherzod.webp",
   },
   {
     name: "Uzoqov Davronboy",
     level: "Loyiha bosh arxitektori",
-    image: "/workers/davronboy.png",
+    image: "/workers/davronboy.webp",
   },
   {
     name: "Raximov Ziyovuddin",
     level: "Dizayner",
-    image: "/workers/ziyovuddin.png",
+    image: "/workers/ziyovuddin.webp",
   },
   {
     name: "Xasanov lhomjon",
     level: "Loyihachi",
-    image: "/workers/empty.jpg",
+    image: "/workers/empty.webp",
   },
   {
     name: "Isamuxamedov Aziz",
     level: "Dasturchi",
-    image: "/workers/aziz.png",
+    image: "/workers/aziz.webp",
   },
   {
     name: "Isamuxamedov Jahongir ",
     level: "Loyiha bosh muxandisi",
-    image: "/workers/javohir.png",
+    image: "/workers/javohir.webp",
   },
 ];
 export default function AboutUs() {
   return (
     <main className="space-y-12">
       <Hero
-        image="aboutUsImage.jpg"
+        image="aboutUsImage.webp"
         title="О нас"
         description="Подробнее о нашей фирме INSAAN"
         cardTitle="Закажите услугу сейчас"

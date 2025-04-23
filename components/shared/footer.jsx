@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="relative mt-10 w-full overflow-hidden py-5">
       <div className="absolute inset-0 -z-10 h-full w-full">
         <Image
-          src="/home/footerBack.png"
+          src="/home/footerBack.webp"
           alt="Footer background"
           layout="fill"
           objectFit="cover"
@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="flex w-full flex-col items-center md:items-start gap-4 md:gap-3">
           <div className="mx-auto w-full max-w-sm md:mx-0">
             <Image
-              src="/home/logoForHome.png"
+              src="/home/logoForHome.webp"
               alt="Логотип INSAAN"
               width={200}
               height={200}
@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <Link href="" className="flex items-center gap-2">
                 <Image
-                  src="/home/instagram.png"
+                  src="/home/instagram.webp"
                   alt="Instagram"
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"
@@ -81,7 +81,7 @@ export default function Footer() {
               </Link>
               <Link href="" className="flex items-center gap-2">
                 <Image
-                  src="/home/telegram.png"
+                  src="/home/telegram.webp"
                   alt="Telegram"
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"
@@ -92,7 +92,7 @@ export default function Footer() {
               </Link>
               <Link href="" className="flex items-center gap-2">
                 <Image
-                  src="/home/facebook.png"
+                  src="/home/facebook.webp"
                   alt="Facebook"
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"

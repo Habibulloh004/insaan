@@ -9,17 +9,17 @@ const architectural = [
   {
     title: "Довольных клиентов",
     count: "50+",
-    image: "/home/clients.png",
+    image: "/home/clients.webp",
   },
   {
     title: "Работников",
     count: "100",
-    image: "/home/worker.png",
+    image: "/home/worker.webp",
   },
   {
     title: "Завершённых проектов",
     count: "100+",
-    image: "/home/factory.png",
+    image: "/home/factory.webp",
   },
 ];
 
@@ -29,7 +29,7 @@ export default function Architectural({ workers }) {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0 top-10">
         <Image
-          src="/home/arxitecBack.png"
+          src="/home/arxitecBack.webp"
           alt="Архитектурный фон"
           layout="fill"
           objectFit="cover"
@@ -67,7 +67,7 @@ export default function Architectural({ workers }) {
           {/* Logo */}
           <div className="w-full max-w-sm mx-auto">
             <Image
-              src="/home/logoForHome.png"
+              src="/home/logoForHome.webp"
               alt="Логотип INSAAN"
               loading="eager"
               width={300}

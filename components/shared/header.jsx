@@ -41,7 +41,7 @@ export default function Header() {
             height={100}
             width={100}
             className="w-20 h-16 object-contain"
-            src="/assets/logo.png"
+            src="/assets/logo.webp"
             alt="logo"
             loading="eager"
           />

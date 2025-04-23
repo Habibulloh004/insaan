@@ -53,7 +53,7 @@ export default function Hero({
       </div>
 
       {/* Gradient Overlay */}
-      <div className={`absolute inset-0 bg-gradient-${gradientDirection} from-white to-transparent`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-r from-white to-transparent`}></div>
 
       {/* Hero Content */}
       <section className="max-w-[1440px] w-11/12 mx-auto relative h-full py-10">

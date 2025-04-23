@@ -36,6 +36,7 @@ export default function Footer() {
           <div className="textNormal2 flex flex-wrap justify-center md:justify-start">
             {navLinks.map((link, i) => (
               <Link
+                prefetch={true}
                 className={cn(
                   navLinks?.length === i + 1 ? "" : "border-r-2",
                   "border-black px-2 text-black my-1"
@@ -58,17 +59,21 @@ export default function Footer() {
             <h1 className="font-medium">Aloqa uchun:</h1>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href={"tel:+998994444004"}>+998 (99) 444-40-04</Link>
+                <Link prefetch={true} href={"tel:+998994444004"}>
+                  +998 (99) 444-40-04
+                </Link>
               </li>
               <li>
-                <Link href={"tel:+998981770404"}>+998 (98) 177-04-04</Link>
+                <Link prefetch={true} href={"tel:+998981770404"}>
+                  +998 (98) 177-04-04
+                </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-3 text-center md:text-left">
             <h1 className="font-medium">Ijtimoiy tarmoqlar:</h1>
             <ul className="flex flex-col gap-3">
-              <Link href="" className="flex items-center gap-2">
+              <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/instagram.webp"
                   alt="Instagram"
@@ -79,7 +84,7 @@ export default function Footer() {
                 />
                 <h1>@insaan_company</h1>
               </Link>
-              <Link href="" className="flex items-center gap-2">
+              <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/telegram.webp"
                   alt="Telegram"
@@ -90,7 +95,7 @@ export default function Footer() {
                 />
                 <h1>@insaan_company</h1>
               </Link>
-              <Link href="" className="flex items-center gap-2">
+              <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/facebook.webp"
                   alt="Facebook"

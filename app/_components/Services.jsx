@@ -63,6 +63,7 @@ export default function Services() {
 
       <div className="flex justify-center items-center pt-4">
         <Link
+          prefetch={true}
           href="/services"
           className="font-medium text-primary relative group"
         >

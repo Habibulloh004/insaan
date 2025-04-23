@@ -109,6 +109,7 @@ export default function Architectural({ workers }) {
       {!workers && (
         <section className="flex justify-center items-center">
           <Link
+            prefetch={true}
             href="/architectural"
             className="font-medium text-primary relative group"
           >

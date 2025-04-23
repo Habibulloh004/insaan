@@ -53,6 +53,7 @@ export default function Contact() {
               <div className="p-2 space-y-1">
                 <h1 className="font-medium">Позвонить</h1>
                 <Link
+                  prefetch={true}
                   target="_blank"
                   href="tel:+998999999999"
                   className="text-sm md:text-base hover:underline"
@@ -66,6 +67,7 @@ export default function Contact() {
               <div className="p-2 space-y-1">
                 <h1 className="font-medium">Адрес электронной почты</h1>
                 <Link
+                  prefetch={true}
                   target="_blank"
                   href="mailto:insaan@gmail.com"
                   className="text-sm md:text-base hover:underline"
@@ -79,6 +81,7 @@ export default function Contact() {
               <div className="p-2 space-y-1">
                 <h1 className="font-medium">Посетите офис</h1>
                 <Link
+                  prefetch={true}
                   target="_blank"
                   href="https://yandex.uz/maps/-/CHf4vM9F"
                   className="text-sm md:text-base hover:underline"
@@ -109,6 +112,7 @@ export default function Contact() {
             {socials?.map((item, idx) => {
               return (
                 <Link
+                  prefetch={true}
                   key={idx}
                   href={item?.link}
                   target="_blank"

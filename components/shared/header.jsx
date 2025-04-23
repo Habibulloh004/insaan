@@ -36,7 +36,11 @@ export default function Header() {
             </SheetHeader>
           </SheetContent>
         </Sheet>
-        <Link href={"/"} className="cursor-pointer max-lg:w-full h-full flex justify-center lg:justify-start items-center">
+        <Link
+          prefetch={true}
+          href={"/"}
+          className="cursor-pointer max-lg:w-full h-full flex justify-center lg:justify-start items-center"
+        >
           <Image
             height={100}
             width={100}
@@ -51,6 +55,7 @@ export default function Header() {
             {navLinks.map((link, i) => {
               return (
                 <Link
+                  prefetch={true}
                   className={cn(
                     "text-black",
                     pathname == link?.link ? "font-bold" : "font-[400] "
@@ -64,6 +69,7 @@ export default function Header() {
             })}
           </nav>
           <Link
+            prefetch={true}
             href={"/contact"}
             className="text-black text-end font-bold text-md lg:text-lg 2xl:text-xl"
           >

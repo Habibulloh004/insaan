@@ -2,7 +2,8 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
+import { NextIntlClientProvider } from "next-intl";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -24,10 +25,12 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/logo.webp" sizes="48" />
       </head>
       <body className={`${montserrat.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer/>
-        <Toaster/>
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Toaster />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

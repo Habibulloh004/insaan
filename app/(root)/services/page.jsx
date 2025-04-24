@@ -4,6 +4,8 @@ import Hero from "@/components/shared/Hero";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
+// export const dynamic = 'force-static'
+
 export default async function Services() {
   const t = await getTranslations("Services");
 

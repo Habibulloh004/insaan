@@ -4,6 +4,8 @@ import Hero from "@/components/shared/Hero";
 import ReviewCardGoriz from "./_components/reviewCardGoriz";
 import { getTranslations } from "next-intl/server";
 
+// export const dynamic = 'force-static'
+
 export default async function ReviewsPage() {
   const t = await getTranslations("ReviewsPage");
 

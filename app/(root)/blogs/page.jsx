@@ -10,6 +10,8 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+export const dynamic = 'force-static'
+
 export default async function Blogs() {
   const t = await getTranslations("Blogs");
 

@@ -5,6 +5,8 @@ import Reviews from "./_components/Reviews";
 import VideoContainer from "./_components/VideoContainer";
 import { getTranslations } from "next-intl/server";
 
+// export const dynamic = "force-static";
+
 export default async function Home() {
   const heroT = await getTranslations("HomePage.Hero");
 

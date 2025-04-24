@@ -5,6 +5,8 @@ import CertificateGallery from "./_components/CertificateGallery";
 import CircleBar from "@/components/ui/circlebar";
 import { getTranslations } from "next-intl/server";
 
+// export const dynamic = 'force-static'
+
 export default async function Construction() {
   const t = await getTranslations("Construction");
 

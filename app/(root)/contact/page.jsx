@@ -6,6 +6,8 @@ import MyForm from "./_components/contactForm";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+// export const dynamic = 'force-static'
+
 export default async function Contact() {
   const t = await getTranslations("Contact");
 

@@ -117,7 +117,14 @@
     "email_placeholder": "programmer@gmail.com",
     "phone_label": "Telefon raqami",
     "phone_placeholder": "Telefon",
-    "submit_button": "Yuborish"
+    "submit_button": "Yuborish",
+    "zod_first_name": "Ism kiritilish kerak",
+    "zod_last_name": "Familiyani kiritilish kerak",
+    "zod_email": "To‘g‘ri email kiriting",
+    "zod_phone": "Telefon raqam noto‘g‘ri",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar muvaffaqiyatli yuborildi!",
+    "error": "Xatolik yuz berdi, qayta urinib ko‘ring."
   },
   "ReviewsPage": {
     "hero_title": "Sharhlar",

@@ -97,7 +97,7 @@ export const PhoneInput = React.forwardRef((props, ref) => {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-[120px] justify-between"
+            className="h-12 w-[120px] justify-between"
           >
             {selectedCountry.label} ({selectedCountry.code})
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -134,7 +134,7 @@ export const PhoneInput = React.forwardRef((props, ref) => {
       
       <Input
         ref={ref}
-        className="flex-1"
+        className="flex-1 h-12"
         value={getDisplayValue()}
         onChange={handleInputChange}
         type="tel"

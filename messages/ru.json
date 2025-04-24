@@ -113,11 +113,18 @@
     "first_name_placeholder": "Введите ваше имя",
     "second_name_label": "Фамилия",
     "second_name_placeholder": "Введите вашу фамилию",
-    "email_label": "Email",
+    "email_label": "Электронная почта",
     "email_placeholder": "programmer@gmail.com",
     "phone_label": "Номер телефона",
     "phone_placeholder": "Телефон",
-    "submit_button": "Отправить"
+    "submit_button": "Отправить",
+    "zod_first_name": "Имя обязательно",
+    "zod_last_name": "Фамилия обязательна",
+    "zod_email": "Введите правильный email",
+    "zod_phone": "Неверный номер телефона",
+    "sending": "Отправка...",
+    "success": "Сообщение успешно отправлено!",
+    "error": "Произошла ошибка, попробуйте снова."
   },
   "ReviewsPage": {
     "hero_title": "Отзывы",

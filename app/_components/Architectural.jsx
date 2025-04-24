@@ -151,7 +151,7 @@ export default function Architectural({ workers }) {
         <section className="flex justify-center items-center">
           <Link
             prefetch={true}
-            href="/architectural"
+            href="/about-us"
             className="font-medium text-primary relative group"
           >
             <h1 className="px-1">{all("all_view")}</h1>

@@ -31,7 +31,6 @@ export default async function RootLayout({ children }) {
         <NextIntlClientProvider
           locale={locale}
           messages={messages}
-          timeZone="UTC"
         >
           <Header />
           {children}

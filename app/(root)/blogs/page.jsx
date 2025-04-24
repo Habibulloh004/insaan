@@ -10,7 +10,7 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-export const dynamic = 'force-static'
+// export const dynamic = 'force-static'
 
 export default async function Blogs() {
   const t = await getTranslations("Blogs");
@@ -20,7 +20,7 @@ export default async function Blogs() {
       id: "item-1",
       title: t("testimonial_1_title"),
       description: t("testimonial_1_description"),
-      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      videoSrc: "https://www.youtube.com/embed/lV8DMJ7WjOU?si=IIgYJwy0oyd7p3dY",
       thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_1_video_alt"),
     },
@@ -28,7 +28,7 @@ export default async function Blogs() {
       id: "item-2",
       title: t("testimonial_2_title"),
       description: t("testimonial_2_description"),
-      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      videoSrc: "https://www.youtube.com/embed/SMqa-prC6rI?si=UiFXEBB2Nn2ie6Es",
       thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_2_video_alt"),
     },
@@ -36,7 +36,7 @@ export default async function Blogs() {
       id: "item-3",
       title: t("testimonial_3_title"),
       description: t("testimonial_3_description"),
-      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      videoSrc: "https://www.youtube.com/embed/-kShJPTFIqc?si=B5T0eiogf8Bxy1u0",
       thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_3_video_alt"),
     },

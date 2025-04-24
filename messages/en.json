@@ -115,9 +115,16 @@
     "second_name_placeholder": "Enter your last name",
     "email_label": "Email",
     "email_placeholder": "programmer@gmail.com",
-    "phone_label": "Phone number",
+    "phone_label": "Phone Number",
     "phone_placeholder": "Phone",
-    "submit_button": "Submit"
+    "submit_button": "Submit",
+    "zod_first_name": "First name is required",
+    "zod_last_name": "Last name is required",
+    "zod_email": "Enter a valid email",
+    "zod_phone": "Phone number is incorrect",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "An error occurred, please try again."
   },
   "ReviewsPage": {
     "hero_title": "Reviews",

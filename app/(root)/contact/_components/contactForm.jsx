@@ -46,12 +46,12 @@ export default function MyForm() {
       setLoading(true);
   
       const message = `
-  📥 *Янги форма юборилди*:
+📥 *Янги форма юборилди*:
   
-  👤 Исм: ${values.first_name || "-"}
-  👥 Фамилия: ${values.second_name || "-"}
-  📧 Электрон почта: ${values.email}
-  📱 Телефон: ${values.phone}
+👤 Исм: ${values.first_name || "-"}
+👥 Фамилия: ${values.second_name || "-"}
+📧 Электрон почта: ${values.email}
+📱 Телефон: ${values.phone}
       `;
   
       const promise = new Promise(async (resolve, reject) => {

@@ -19,7 +19,7 @@ export default async function Blogs() {
       title: t("testimonial_1_title"),
       description: t("testimonial_1_description"),
       videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_1_video_alt"),
     },
     {
@@ -27,7 +27,7 @@ export default async function Blogs() {
       title: t("testimonial_2_title"),
       description: t("testimonial_2_description"),
       videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_2_video_alt"),
     },
     {
@@ -35,15 +35,15 @@ export default async function Blogs() {
       title: t("testimonial_3_title"),
       description: t("testimonial_3_description"),
       videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailSrc: "/home/videoBack.webp",
       thumbnailAlt: t("testimonial_3_video_alt"),
     },
   ];
 
   const images = [
-    { src: "/assets/blogBottomImage.webp", alt: t("image_1_alt") },
-    { src: "/assets/blogBottomImage.webp", alt: t("image_2_alt") },
-    { src: "/assets/blogBottomImage.webp", alt: t("image_3_alt") },
+    { src: "/workers/blog1.webp", alt: t("image_1_alt") },
+    { src: "/workers/blog2.webp", alt: t("image_2_alt") },
+    { src: "/workers/blog3.webp", alt: t("image_3_alt") },
   ];
 
   return (
@@ -93,11 +93,10 @@ export default async function Blogs() {
           ))}
         </Accordion>
       </div>
-      <div className="w-11/12 max-w-[1440px] mx-auto grid grid-cols-3 gap-4 px-4 md:px-0">
+      <div className="max-md:hidden w-11/12 max-w-[1440px] mx-auto grid grid-cols-3 gap-4 px-4 md:px-0">
         {images.map((image, idx) => {
           let classNames = "relative w-full h-48 md:h-64";
-          if (idx === 0)
-            classNames += " col-span-2 row-span-2 h-full md:h-auto";
+          if (idx === 0) classNames += "col-span-2 row-span-2 h-full md:h-auto";
           return (
             <div
               key={idx}
@@ -107,6 +106,20 @@ export default async function Blogs() {
                 gridRow: idx === 0 ? "span 2" : undefined,
               }}
             >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="md:hidden w-11/12 max-w-[1440px] mx-auto flex flex-col gap-4 px-4 md:px-0">
+        {images.map((image, idx) => {
+          return (
+            <div key={idx} className={"relative w-full aspect-[16/6]"}>
               <Image
                 src={image.src}
                 alt={image.alt}

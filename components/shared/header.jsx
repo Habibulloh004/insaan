@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -20,6 +20,7 @@ export default function Header() {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     {
@@ -59,12 +60,16 @@ export default function Header() {
     window.location.href = window.location.origin + window.location.pathname;
   };
 
+  const handleLinkClick = () => {
+    setIsOpen(false); // Closing the sheet when a link is clicked
+  };
+
   return (
     <main className="sticky top-0 left-0 w-full h-20 z-[900] bg-white shadow-sm">
       <section className="h-full flex justify-between items-center gap-4 container mx-auto w-11/12">
         {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger className="lg:hidden cursor-pointer">
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger className="lg:hidden cursor-pointer" onClick={() => setIsOpen(true)}>
             <AlignJustify className="w-6 h-6" />
           </SheetTrigger>
           <SheetContent side="left" className="z-[999] p-6">
@@ -93,11 +98,12 @@ export default function Header() {
                       ? "font-bold text-primary"
                       : "font-[400] text-black"
                   )}
+                  onClick={handleLinkClick} // Closing the sheet on link click
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link href="/contact" className="text-md font-bold text-black">
+              <Link href="/contact" className="text-md font-bold text-black" onClick={handleLinkClick}>
                 {t("contact_link")}
               </Link>
             </nav>
@@ -119,8 +125,7 @@ export default function Header() {
           />
         </Link>
         <div className="lg:hidden">
-
-        <LanguageSwitcher value={locale} onChange={handleLanguageChange} />
+          <LanguageSwitcher value={locale} onChange={handleLanguageChange} />
         </div>
 
         {/* Desktop Nav */}

@@ -40,26 +40,51 @@ export default function MyForm() {
       phone: "+998",
     },
   });
-  
+
   const onSubmit = async (values) => {
     try {
       setLoading(true);
-      const templateParams = {
-        from_name: values.first_name + " " + values.second_name,
-        from_email: values.email,
-        phone: values.phone,
-      };
-      console.log(templateParams);
   
-      const promise = emailjs.send(
-        "service_v7dhg2r", // service ID
-        "template_8a3mrnm", // template ID
-        templateParams,
-        "Lf8Unr87wRrz0nuRa" // public key
-      );
+      const message = `
+  📥 *Янги форма юборилди*:
   
-      // toast.promise with progress indication
-      toast.promise(
+  👤 Исм: ${values.first_name || "-"}
+  👥 Фамилия: ${values.second_name || "-"}
+  📧 Электрон почта: ${values.email}
+  📱 Телефон: ${values.phone}
+      `;
+  
+      const promise = new Promise(async (resolve, reject) => {
+        try {
+          // 1 soniya kutish
+          await new Promise((res) => setTimeout(res, 1000));
+  
+          const res = await fetch(
+            `https://api.telegram.org/bot7729055413:AAEL76FP1sjYdXSwp7DqbfwUrqwBYAwMqjw/sendMessage`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                chat_id: "-4786281248",
+                text: message,
+                parse_mode: "Markdown",
+              }),
+            }
+          );
+  
+          if (!res.ok) {
+            throw new Error("Telegram yuborishda xatolik");
+          }
+  
+          resolve(res);
+        } catch (err) {
+          reject(err);
+        }
+      });
+  
+      await toast.promise(
         promise,
         {
           loading: t("sending"),
@@ -67,28 +92,20 @@ export default function MyForm() {
           error: t("error"),
         },
         {
-          style: {
-            minWidth: "250px",
-          },
-          // Add progress tracking here if needed (optional)
-          progress: (progress) => {
-            return {
-              label: `${t("sending")}: ${Math.round(progress * 100)}%`,
-              progress: progress * 100, // Update progress percentage
-            };
-          },
+          style: { minWidth: "250px" },
         }
       );
   
-      await promise;
       form.reset();
     } catch (error) {
       console.error(error);
+      toast.error(t("error"));
     } finally {
       setLoading(false);
     }
   };
   
+
   return (
     <Form {...form}>
       <form

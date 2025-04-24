@@ -37,7 +37,7 @@ export default function Hero({
   };
 
   return (
-    <main className="relative min-h-[250px] md:h-[60vh]">
+    <main className="relative min-h-[250px] md:h-[65vh]">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image

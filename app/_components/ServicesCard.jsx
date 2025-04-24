@@ -59,9 +59,9 @@ export default function ServiceCard({
           <Image
             src={image}
             alt={title || "Service image"}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover"
+            className="object-cover w-full h-full"
+            width={500}
+            height={500}
             quality={imageQuality}
             priority={priority}
           />

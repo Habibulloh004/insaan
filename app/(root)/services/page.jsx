@@ -18,12 +18,12 @@ export default async function Services() {
     {
       title: t("service_2_title"),
       desc: t("service_2_desc"),
-      image: "/home/services1.webp",
+      image: "/home/services2.webp",
     },
     {
       title: t("service_3_title"),
       desc: t("service_3_desc"),
-      image: "/home/services1.webp",
+      image: "/home/services3.webp",
     },
   ];
 

@@ -25,7 +25,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/assets/logo.webp" sizes="48" />
+        <link rel="icon" href="/logo.svg" sizes="48" />
       </head>
       <body className={`${montserrat.variable} antialiased`}>
         <NextIntlClientProvider

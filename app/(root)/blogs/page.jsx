@@ -21,7 +21,7 @@ export default async function Blogs() {
       title: t("testimonial_1_title"),
       description: t("testimonial_1_description"),
       videoSrc: "https://www.youtube.com/embed/lV8DMJ7WjOU?si=IIgYJwy0oyd7p3dY",
-      thumbnailSrc: "/home/videoBack.webp",
+      thumbnailSrc: "/videos/video1.webp",
       thumbnailAlt: t("testimonial_1_video_alt"),
     },
     {
@@ -29,7 +29,7 @@ export default async function Blogs() {
       title: t("testimonial_2_title"),
       description: t("testimonial_2_description"),
       videoSrc: "https://www.youtube.com/embed/SMqa-prC6rI?si=UiFXEBB2Nn2ie6Es",
-      thumbnailSrc: "/home/videoBack.webp",
+      thumbnailSrc: "/videos/video2.webp",
       thumbnailAlt: t("testimonial_2_video_alt"),
     },
     {
@@ -37,7 +37,7 @@ export default async function Blogs() {
       title: t("testimonial_3_title"),
       description: t("testimonial_3_description"),
       videoSrc: "https://www.youtube.com/embed/-kShJPTFIqc?si=B5T0eiogf8Bxy1u0",
-      thumbnailSrc: "/home/videoBack.webp",
+      thumbnailSrc: "/videos/video3.webp",
       thumbnailAlt: t("testimonial_3_video_alt"),
     },
   ];

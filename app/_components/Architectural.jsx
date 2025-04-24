@@ -27,11 +27,6 @@ export default function Architectural({ workers }) {
       image: "/workers/ziyovuddin.webp",
     },
     {
-      name: tAbout("worker_4_name"),
-      level: tAbout("worker_4_level"),
-      image: "/workers/empty.webp",
-    },
-    {
       name: tAbout("worker_5_name"),
       level: tAbout("worker_5_level"),
       image: "/workers/aziz.webp",

@@ -61,10 +61,10 @@ export default async function Contact() {
                 <Link
                   prefetch={true}
                   target="_blank"
-                  href="tel:+998999999999"
+                  href="tel:+998994444004"
                   className="text-sm md:text-base hover:underline"
                 >
-                  {t("phone_number")}
+                  +998 (99) 444-40-04
                 </Link>
               </div>
             </li>

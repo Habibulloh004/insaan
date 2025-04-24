@@ -1,9 +1,51 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Reviews() {
+  const t = useTranslations("Reviews");
+
+  // Construct reviews array from flattened translation keys
+  const reviews = [
+    {
+      id: 1,
+      name: t("review_1_name"),
+      position: t("review_1_position"),
+      text: t("review_1_text"),
+      avatar: "/home/avatar.webp"
+    },
+    {
+      id: 2,
+      name: t("review_2_name"),
+      position: t("review_2_position"),
+      text: t("review_2_text"),
+      avatar: "/home/avatar.webp"
+    },
+    {
+      id: 3,
+      name: t("review_3_name"),
+      position: t("review_3_position"),
+      text: t("review_3_text"),
+      avatar: "/home/avatar.webp"
+    },
+    {
+      id: 4,
+      name: t("review_4_name"),
+      position: t("review_4_position"),
+      text: t("review_4_text"),
+      avatar: "/home/avatar.webp"
+    },
+    {
+      id: 5,
+      name: t("review_5_name"),
+      position: t("review_5_position"),
+      text: t("review_5_text"),
+      avatar: "/home/avatar.webp"
+    }
+  ];
+
   // Add custom animations to Tailwind config
   const fadeIn = `@keyframes fadeIn {
     0% { opacity: 0; transform: translateY(10px); }
@@ -23,44 +65,6 @@ export default function Reviews() {
       document.head.removeChild(style);
     };
   }, []);
-  // Sample review data
-  const reviews = [
-    {
-      id: 1,
-      name: "Отабек Тажиев",
-      position: "Otabek Buildings",
-      text: "Мы получили невероятный опыт работы с ними и были впечатлены тем, что они добились таких больших успехов всего за три недели. Наша команда очень благодарна за замечательные улучшения, которые они внесли, и за возможность так быстро ознакомиться с концепцией продукта.",
-      avatar: "/home/avatar.webp",
-    },
-    {
-      id: 2,
-      name: "Анна Смирнова",
-      position: "Digital Solutions",
-      text: "Их профессионализм и внимание к деталям превзошли все наши ожидания. Проект был завершен в срок, а результаты превзошли все, что мы могли себе представить. Рекомендую эту команду всем, кто ищет инновационные решения.",
-      avatar: "/home/avatar.webp",
-    },
-    {
-      id: 3,
-      name: "Михаил Петров",
-      position: "Tech Innovators",
-      text: "Сотрудничество с этой командой существенно повысило эффективность наших бизнес-процессов. Они проявили глубокое понимание наших потребностей и предложили ряд решений, которые оказались именно тем, что нам было нужно.",
-      avatar: "/home/avatar.webp",
-    },
-    {
-      id: 4,
-      name: "Елена Козлова",
-      position: "Creative Studios",
-      text: "Нам понравился их творческий подход и способность быстро адаптироваться к изменяющимся требованиям. Команда всегда была на связи и оперативно решала возникающие вопросы. Результат превзошел наши ожидания.",
-      avatar: "/home/avatar.webp",
-    },
-    {
-      id: 5,
-      name: "Сергей Иванов",
-      position: "Construct Pro",
-      text: "Работа с этой командой была настоящим удовольствием. Они не только выполнили все наши требования, но и предложили ряд улучшений, которые значительно повысили качество конечного продукта.",
-      avatar: "/home/avatar.webp",
-    },
-  ];
 
   const [activeIndex, setActiveIndex] = useState(2);
   const [animating, setAnimating] = useState(false);
@@ -77,7 +81,7 @@ export default function Reviews() {
   return (
     <main className="w-full max-w-5xl mx-auto py-8 md:py-12 lg:py-16 px-4 relative space-y-4 md:space-y-5">
       <h1 className="textNormal5 text-center text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6">
-        Несколько слов от наших клиентов
+        {t("heading")}
       </h1>
       
       {/* Review section */}

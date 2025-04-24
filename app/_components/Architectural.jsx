@@ -1,29 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { workerData } from "../(root)/about-us/page";
 import WorkerCard from "@/components/shared/WorkerCard";
 import WorkersCarousel from "@/components/shared/WorkderCarousel";
-
-const architectural = [
-  {
-    title: "Довольных клиентов",
-    count: "50+",
-    image: "/home/clients.webp",
-  },
-  {
-    title: "Работников",
-    count: "100",
-    image: "/home/worker.webp",
-  },
-  {
-    title: "Завершённых проектов",
-    count: "100+",
-    image: "/home/factory.webp",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Architectural({ workers }) {
+  const t = useTranslations("Architectural");
+  const all = useTranslations("All");
+  const tAbout = useTranslations("AboutUs");
+
+  const workerData = [
+    {
+      name: tAbout("worker_1_name"),
+      level: tAbout("worker_1_level"),
+      image: "/workers/sherzod.webp",
+    },
+    {
+      name: tAbout("worker_2_name"),
+      level: tAbout("worker_2_level"),
+      image: "/workers/davronboy.webp",
+    },
+    {
+      name: tAbout("worker_3_name"),
+      level: tAbout("worker_3_level"),
+      image: "/workers/ziyovuddin.webp",
+    },
+    {
+      name: tAbout("worker_4_name"),
+      level: tAbout("worker_4_level"),
+      image: "/workers/empty.webp",
+    },
+    {
+      name: tAbout("worker_5_name"),
+      level: tAbout("worker_5_level"),
+      image: "/workers/aziz.webp",
+    },
+    {
+      name: tAbout("worker_6_name"),
+      level: tAbout("worker_6_level"),
+      image: "/workers/javohir.webp",
+    },
+  ];
+  const architectural = [
+    {
+      title: t("achievements1"),
+      count: "50+",
+      image: "/home/clients.webp",
+    },
+    {
+      title: t("achievements2"),
+      count: "100",
+      image: "/home/worker.webp",
+    },
+    {
+      title: t("achievements3"),
+      count: "100+",
+      image: "/home/factory.webp",
+    },
+  ];
+
+  const title = t("title").replace("INSAAN", "<strong>INSAAN</strong>");
+  const achievements = t("achievements").replace(
+    "INSAAN",
+    "<strong>INSAAN</strong>"
+  );
+
   return (
     <main className="relative h-full py-16 space-y-10">
       {/* Background Image */}
@@ -44,22 +86,21 @@ export default function Architectural({ workers }) {
       <section className="text-primary/70 max-w-[1440px] mx-auto w-11/12 relative z-10 flex flex-col md:flex-row gap-8 items-center">
         {/* Left column - Text content */}
         <div className="md:w-1/2 space-y-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl">
-            Архитектурная фирма <strong className="">INSAAN</strong>
-          </h1>
+          <h1
+            dangerouslySetInnerHTML={{ __html: title }}
+            className="text-3xl md:text-4xl lg:text-5xl"
+          />
 
           <ul className="space-y-2 text-lg pl-5 text-gray-700">
-            <li>Была основана в 2022 году</li>
-            <li>Работавшая с крупными строительными компаниями</li>
-            <li>Имеет портфолио в 100+ проектов</li>
+            <li>{t("li_1")}</li>
+            <li>{t("li_2")}</li>
+            <li>{t("li_3")}</li>
           </ul>
 
-          <p className="text-lg text-gray-700">
-            За своё время работы фирма{" "}
-            <strong className="text-primary">INSAAN</strong> успела достичь
-            значительных результатов в сфере архитектурного проектирования и
-            зарекомендовать себя как надежный партнер для клиентов.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{ __html: achievements }}
+            className="text-lg text-gray-700"
+          />
         </div>
 
         {/* Right column - Logo and stats */}
@@ -113,7 +154,7 @@ export default function Architectural({ workers }) {
             href="/architectural"
             className="font-medium text-primary relative group"
           >
-            <h1 className="px-1">Узнать больше</h1>
+            <h1 className="px-1">{all("all_view")}</h1>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </section>
@@ -122,7 +163,7 @@ export default function Architectural({ workers }) {
         <div className="relative z-10">
           {/* Mobil uchun carousel */}
           <div className="block md:hidden">
-            <WorkersCarousel />
+            <WorkersCarousel workerData={workerData} />
           </div>
           {/* Desktop uchun original grid */}
           <section className="hidden md:flex text-primary/70 max-w-[1440px] mx-auto w-11/12 relative z-10 flex-wrap gap-4 md:gap-10 justify-center">

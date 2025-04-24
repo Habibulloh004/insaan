@@ -43,7 +43,7 @@ const LanguageSwitcher = ({ value, onChange }) => {
               alt={selectedLanguage.label}
               className="h-5 w-5 rounded-full object-cover"
             />
-            <span className="lg:hidden">{selectedLanguage.label}</span>
+            <span className="max-lg:hidden">{selectedLanguage.label}</span>
           </>
         )}
       </button>

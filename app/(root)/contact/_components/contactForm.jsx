@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   first_name: z.string().min(1).optional(),
@@ -24,6 +25,8 @@ const formSchema = z.object({
 });
 
 export default function MyForm() {
+  const t = useTranslations("MyForm");
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -56,11 +59,10 @@ export default function MyForm() {
           name="first_name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Ism</FormLabel>
+              <FormLabel>{t("first_name_label")}</FormLabel>
               <FormControl>
-                <Input placeholder="Ismingizni kiriting" type="" {...field} />
+                <Input placeholder={t("first_name_placeholder")} type="" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -71,15 +73,14 @@ export default function MyForm() {
           name="second_name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Familiya</FormLabel>
+              <FormLabel>{t("second_name_label")}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Familiyangizni kiriting"
+                  placeholder={t("second_name_placeholder")}
                   type=""
                   {...field}
                 />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -90,15 +91,14 @@ export default function MyForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("email_label")}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="programmer@gmail.com"
+                  placeholder={t("email_placeholder")}
                   type="email"
                   {...field}
                 />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -109,21 +109,20 @@ export default function MyForm() {
           name="phone"
           render={({ field }) => (
             <FormItem className="flex flex-col items-start">
-              <FormLabel>Phone number</FormLabel>
+              <FormLabel>{t("phone_label")}</FormLabel>
               <FormControl className="w-full">
                 <PhoneInput
-                  placeholder="Phone"
+                  placeholder={t("phone_placeholder")}
                   {...field}
                   defaultCountry="UZ"
                 />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit">{t("submit_button")}</Button>
       </form>
     </Form>
   );

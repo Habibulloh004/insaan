@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-const ReviewCard = ({ name, rating, level, text }) => {
+const ReviewCard = ({ image, name, rating, level, text }) => {
   return (
     <div className="flex flex-col justify-center items-center relative max-w-[300px] mx-auto bg-white rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.15)] p-6 text-center">
       <div className="-z-10 w-28 h-28 bg-white rounded-full absolute -top-14 flex justify-center shadow-[0_8px_24px_rgba(0,0,0,0.15)]"></div>
       <div className="z-10 w-28 h-28 bg-white rounded-full absolute -top-14 flex justify-center">
         <Image
-          src="/home/avatar.webp" // bu yerga siz yuklagan rasm yo‘lini yozing
+          src={image || "/home/avatar.webp"} // bu yerga siz yuklagan rasm yo‘lini yozing
           alt={name}
           width={100}
           height={100}

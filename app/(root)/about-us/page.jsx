@@ -1,58 +1,60 @@
 import Architectural from "@/app/_components/Architectural";
 import VideoContainer from "@/app/_components/VideoContainer";
 import Hero from "@/components/shared/Hero";
-import CircleBar from "@/components/ui/circlebar";
+import { getTranslations } from "next-intl/server";
 import React from "react";
-import WorkerCard from "../../../components/shared/WorkerCard";
 
-export const workerData = [
-  {
-    name: "Isamuxamedov Sherzod",
-    level: "Korxona rahbari",
-    image: "/workers/sherzod.webp",
-  },
-  {
-    name: "Uzoqov Davronboy",
-    level: "Loyiha bosh arxitektori",
-    image: "/workers/davronboy.webp",
-  },
-  {
-    name: "Raximov Ziyovuddin",
-    level: "Dizayner",
-    image: "/workers/ziyovuddin.webp",
-  },
-  {
-    name: "Xasanov lhomjon",
-    level: "Loyihachi",
-    image: "/workers/empty.webp",
-  },
-  {
-    name: "Isamuxamedov Aziz",
-    level: "Dasturchi",
-    image: "/workers/aziz.webp",
-  },
-  {
-    name: "Isamuxamedov Jahongir ",
-    level: "Loyiha bosh muxandisi",
-    image: "/workers/javohir.webp",
-  },
-];
-export default function AboutUs() {
+export default async function AboutUs() {
+  const t = await getTranslations("AboutUs");
+
+  const workerData = [
+    {
+      name: t("worker_1_name"),
+      level: t("worker_1_level"),
+      image: "/workers/sherzod.webp",
+    },
+    {
+      name: t("worker_2_name"),
+      level: t("worker_2_level"),
+      image: "/workers/davronboy.webp",
+    },
+    {
+      name: t("worker_3_name"),
+      level: t("worker_3_level"),
+      image: "/workers/ziyovuddin.webp",
+    },
+    {
+      name: t("worker_4_name"),
+      level: t("worker_4_level"),
+      image: "/workers/empty.webp",
+    },
+    {
+      name: t("worker_5_name"),
+      level: t("worker_5_level"),
+      image: "/workers/aziz.webp",
+    },
+    {
+      name: t("worker_6_name"),
+      level: t("worker_6_level"),
+      image: "/workers/javohir.webp",
+    },
+  ];
+
   return (
     <main className="space-y-12">
       <Hero
         image="aboutUsImage.webp"
-        title="О нас"
-        description="Подробнее о нашей фирме INSAAN"
-        cardTitle="Закажите услугу сейчас"
-        cardButtonText="Связаться"
+        title={t("hero_title")}
+        description={t("hero_description")}
+        cardTitle={t("hero_card_title")}
+        cardButtonText={t("hero_card_button_text")}
         cardButtonLink="/contact"
         imagePosition="top"
         gradientDirection="to-r"
         cardPosition="right-bottom"
         showCard={false}
       />
-      <Architectural workers={true} />
+      <Architectural workers={true} workerData={workerData} />
       <VideoContainer />
     </main>
   );

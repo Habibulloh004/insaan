@@ -1,19 +1,21 @@
-// pages/index.js
 import Hero from "@/components/shared/Hero";
 import Architectural from "./_components/Architectural";
 import Services from "./_components/Services";
 import Reviews from "./_components/Reviews";
 import VideoContainer from "./_components/VideoContainer";
+import { getTranslations } from "next-intl/server";
 
-export default function Home() {
+export default async function Home() {
+  const heroT = await getTranslations("HomePage.Hero");
+
   return (
     <main>
       <Hero
         image="homeImage.webp"
-        title="Все услуги для людей"
-        description="Документация, планировка и прочие услуги в сфере строительства."
-        cardTitle="Свяжитесь с нами чтобы узнать подробнее"
-        cardButtonText="Связаться"
+        title={heroT("title")}
+        description={heroT("desc")}
+        cardTitle={heroT("contact_title")}
+        cardButtonText={heroT("contact_btn")}
         cardButtonLink="/contact"
         imagePosition="bottom"
         gradientDirection="to-r"
@@ -21,9 +23,9 @@ export default function Home() {
         showCard={true}
       />
       <Architectural />
-      <Services/>
-      <Reviews/>
-      <VideoContainer/>
+      <Services />
+      <Reviews />
+      <VideoContainer />
     </main>
   );
 }

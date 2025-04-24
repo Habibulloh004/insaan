@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "@/components/shared/Hero";
 import React from "react";
 import {
@@ -10,57 +8,58 @@ import {
 } from "@/components/ui/accordion";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-// Sample testimonial data
-const testimonials = [
-  {
-    id: "item-1",
-    title: "Иван Петров",
-    description:
-      "Отличный сервис! Я очень доволен качеством работы и обслуживанием клиентов. Буду рекомендовать вашу компанию своим друзьям и коллегам.",
-    videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-    thumbnailSrc: "/home/videoImage.webp",
-  },
-  {
-    id: "item-2",
-    title: "Анна Сидорова",
-    description:
-      "Профессиональный подход к делу. Всё было сделано вовремя и качественно. Спасибо большое за помощь!",
-    videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-    thumbnailSrc: "/home/videoImage.webp",
-  },
-  {
-    id: "item-3",
-    title: "Алексей Кузнецов",
-    description:
-      "Я впечатлен скоростью выполнения заказа и качеством результата. Определенно буду обращаться снова.",
-    videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
-    thumbnailSrc: "/home/videoImage.webp",
-  },
-];
+export default async function Blogs() {
+  const t = await getTranslations("Blogs");
 
-const images = [
-  { src: "/assets/blogBottomImage.webp", alt: "Main image" },
-  { src: "/assets/blogBottomImage.webp", alt: "Second image" },
-  { src: "/assets/blogBottomImage.webp", alt: "Third image" },
-];
+  const testimonials = [
+    {
+      id: "item-1",
+      title: t("testimonial_1_title"),
+      description: t("testimonial_1_description"),
+      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailAlt: t("testimonial_1_video_alt"),
+    },
+    {
+      id: "item-2",
+      title: t("testimonial_2_title"),
+      description: t("testimonial_2_description"),
+      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailAlt: t("testimonial_2_video_alt"),
+    },
+    {
+      id: "item-3",
+      title: t("testimonial_3_title"),
+      description: t("testimonial_3_description"),
+      videoSrc: "https://www.youtube.com/embed/5VH9lnFEPyo?si=jCDkXJ5mm_KMbKJf",
+      thumbnailSrc: "/home/videoImage.webp",
+      thumbnailAlt: t("testimonial_3_video_alt"),
+    },
+  ];
 
-export default function Blogs() {
+  const images = [
+    { src: "/assets/blogBottomImage.webp", alt: t("image_1_alt") },
+    { src: "/assets/blogBottomImage.webp", alt: t("image_2_alt") },
+    { src: "/assets/blogBottomImage.webp", alt: t("image_3_alt") },
+  ];
+
   return (
     <main className="space-y-8 md:space-y-12">
       <Hero
         image="blogImage.webp"
-        title="Блог"
-        description="Наш блог и часто задаваемые вопросы"
-        cardTitle="Закажите услугу сейчас"
-        cardButtonText="Связаться"
+        title={t("hero_title")}
+        description={t("hero_description")}
+        cardTitle={t("hero_card_title")}
+        cardButtonText={t("hero_card_button_text")}
         cardButtonLink="/contact"
         imagePosition="bottom"
         gradientDirection="to-r"
         cardPosition="right-bottom"
         showCard={false}
       />
-
       <div className="w-11/12 lg:max-w-4xl mx-auto px-4">
         <Accordion
           type="single"
@@ -85,7 +84,7 @@ export default function Blogs() {
                       animationStyle="from-center"
                       videoSrc={testimonial.videoSrc}
                       thumbnailSrc={testimonial.thumbnailSrc}
-                      thumbnailAlt={`${testimonial.title} Video`}
+                      thumbnailAlt={testimonial.thumbnailAlt}
                     />
                   </div>
                 </div>

@@ -4,8 +4,11 @@ import Link from "next/link";
 import React from "react";
 import MyForm from "./_components/contactForm";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function Contact() {
+export default async function Contact() {
+  const t = await getTranslations("Contact");
+
   const socials = [
     {
       image: "/socials/facebook.webp",
@@ -28,14 +31,15 @@ export default function Contact() {
       link: "https://web.whatsapp.com/",
     },
   ];
+
   return (
     <main className="space-y-8 md:space-y-12">
       <Hero
         image="contactImage.webp"
-        title="Контакты"
-        description="Контактная информация и способы связи с нами"
-        cardTitle="Закажите услугу сейчас"
-        cardButtonText="Связаться"
+        title={t("hero_title")}
+        description={t("hero_description")}
+        cardTitle={t("hero_card_title")}
+        cardButtonText={t("hero_card_button_text")}
         cardButtonLink="/contact"
         imagePosition="bottom"
         gradientDirection="to-r"
@@ -45,55 +49,55 @@ export default function Contact() {
       <div className="flex flex-col lg:flex-row max-w-[1440px] mx-auto w-11/12 relative z-10 gap-6 md:gap-8">
         <section className="w-full lg:w-1/2">
           <h1 className="w-full text-xl md:textNormal4 font-bold text-black mb-4">
-            Коммуникация
+            {t("communication_heading")}
           </h1>
           <ul className="space-y-4 mb-8">
             <li className="flex justify-start items-center gap-2">
               <Phone className="min-w-5" />
               <div className="p-2 space-y-1">
-                <h1 className="font-medium">Позвонить</h1>
+                <h1 className="font-medium">{t("phone_title")}</h1>
                 <Link
                   prefetch={true}
                   target="_blank"
                   href="tel:+998999999999"
                   className="text-sm md:text-base hover:underline"
                 >
-                  +998 99 999-99-99
+                  {t("phone_number")}
                 </Link>
               </div>
             </li>
             <li className="flex justify-start items-center gap-2">
               <Mail className="min-w-5" />
               <div className="p-2 space-y-1">
-                <h1 className="font-medium">Адрес электронной почты</h1>
+                <h1 className="font-medium">{t("email_title")}</h1>
                 <Link
                   prefetch={true}
                   target="_blank"
                   href="mailto:insaan@gmail.com"
                   className="text-sm md:text-base hover:underline"
                 >
-                  Insaan@gmail.com
+                  {t("email_address")}
                 </Link>
               </div>
             </li>
             <li className="flex justify-start items-center gap-2">
               <MapPin className="min-w-5" />
               <div className="p-2 space-y-1">
-                <h1 className="font-medium">Посетите офис</h1>
+                <h1 className="font-medium">{t("office_title")}</h1>
                 <Link
                   prefetch={true}
                   target="_blank"
                   href="https://yandex.uz/maps/-/CHf4vM9F"
                   className="text-sm md:text-base hover:underline"
                 >
-                  Яшнабадский район, улица Иззат Дом №77
+                  {t("office_address")}
                 </Link>
               </div>
             </li>
           </ul>
           <div>
             <h1 className="w-full text-xl md:textNormal4 font-bold text-black mb-4">
-              Позвольте нам узнать про вашу проблему - просто заполните форму
+              {t("form_heading")}
             </h1>
             <MyForm />
           </div>

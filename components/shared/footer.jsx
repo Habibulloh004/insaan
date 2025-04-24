@@ -1,17 +1,48 @@
 "use client";
 
-import { cn, navLinks } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
+  const navLinks = [
+    {
+      id: 1,
+      name: t("nav_link_1"),
+      link: "/",
+    },
+    {
+      id: 2,
+      name: t("nav_link_2"),
+      link: "/services",
+    },
+    {
+      id: 3,
+      name: t("nav_link_3"),
+      link: "/about-us",
+    },
+    {
+      id: 4,
+      name: t("nav_link_4"),
+      link: "/reviews",
+    },
+    {
+      id: 5,
+      name: t("nav_link_5"),
+      link: "/blogs",
+    },
+  ];
+
   return (
     <footer className="relative mt-10 w-full overflow-hidden py-5">
       <div className="absolute inset-0 -z-10 h-full w-full">
         <Image
           src="/home/footerBack.webp"
-          alt="Footer background"
+          alt="Footer fon rasmi"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
@@ -25,7 +56,7 @@ export default function Footer() {
           <div className="mx-auto w-full max-w-sm md:mx-0">
             <Image
               src="/home/logoForHome.webp"
-              alt="Логотип INSAAN"
+              alt={t("logo_alt")}
               width={200}
               height={200}
               className="aspect-[5/3] max-w-sm"
@@ -49,62 +80,62 @@ export default function Footer() {
             ))}
           </div>
           <h1 className="textNormal2 text-center md:text-left">
-            © 2025 INSAAN. Barcha huquqlar himoyalangan.
+            {t("copyright")}
           </h1>
         </div>
 
         {/* Contact and Social Section */}
         <div className="flex w-full flex-col sm:flex-row justify-center md:justify-end items-center md:items-start gap-8 sm:gap-12">
           <div className="space-y-3 text-center md:text-left">
-            <h1 className="font-medium">Aloqa uchun:</h1>
+            <h1 className="font-medium">{t("contact_heading")}</h1>
             <ul className="flex flex-col gap-3">
               <li>
                 <Link prefetch={true} href={"tel:+998994444004"}>
-                  +998 (99) 444-40-04
+                  {t("phone_1")}
                 </Link>
               </li>
               <li>
                 <Link prefetch={true} href={"tel:+998981770404"}>
-                  +998 (98) 177-04-04
+                  {t("phone_2")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-3 text-center md:text-left">
-            <h1 className="font-medium">Ijtimoiy tarmoqlar:</h1>
+            <h1 className="font-medium">{t("social_heading")}</h1>
             <ul className="flex flex-col gap-3">
               <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/instagram.webp"
-                  alt="Instagram"
+                  alt={t("instagram_alt")}
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"
                   width={100}
                   height={100}
                 />
-                <h1>@insaan_company</h1>
+                <h1>{t("instagram_handle")}</h1>
               </Link>
               <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/telegram.webp"
-                  alt="Telegram"
+                  alt={t("telegram_alt")}
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"
                   width={100}
                   height={100}
                 />
-                <h1>@insaan_company</h1>
+                <h1>{t("telegram_handle")}</h1>
               </Link>
               <Link prefetch={true} href="" className="flex items-center gap-2">
                 <Image
                   src="/home/facebook.webp"
-                  alt="Facebook"
+                  alt={t("facebook_alt")}
                   loading="eager"
                   className="h-6 w-6 sm:h-8 sm:w-8"
                   width={100}
                   height={100}
                 />
-                <h1>@insaan_company</h1>
+                <h1>{t("facebook_handle")}</h1>
               </Link>
             </ul>
           </div>

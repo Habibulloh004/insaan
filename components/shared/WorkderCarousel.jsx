@@ -11,11 +11,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { workerData } from "@/app/(root)/about-us/page";
 
 // Existing WorkerCard component is imported above, so we're using it directly
 
-const WorkersCarousel = () => {
+const WorkersCarousel = ({workerData}) => {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);

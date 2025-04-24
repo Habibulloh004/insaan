@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, navLinks } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,16 +14,50 @@ import {
 import { AlignJustify } from "lucide-react";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const pathname = usePathname();
+
+  const navLinks = [
+    {
+      id: 1,
+      name: t("nav_link_1"),
+      link: "/",
+    },
+    {
+      id: 2,
+      name: t("nav_link_2"),
+      link: "/services",
+    },
+    {
+      id: 3,
+      name: t("nav_link_6"),
+      link: "/construction",
+    },
+    {
+      id: 4,
+      name: t("nav_link_3"),
+      link: "/about-us",
+    },
+    {
+      id: 5,
+      name: t("nav_link_4"),
+      link: "/reviews",
+    },
+    {
+      id: 6,
+      name: t("nav_link_5"),
+      link: "/blogs",
+    },
+  ];
+
   const handleLanguageChange = (newLocale) => {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
     window.location.href = window.location.origin + window.location.pathname;
   };
-
-  const locale = useLocale();
-  const pathname = usePathname();
 
   return (
     <main className="sticky top-0 left-0 w-full h-20 z-[900] bg-white shadow-sm">
@@ -39,7 +73,7 @@ export default function Header() {
                 <Link href="/">
                   <Image
                     src="/assets/logo.webp"
-                    alt="logo"
+                    alt={t("logo_alt")}
                     width={80}
                     height={40}
                     loading="eager"
@@ -64,12 +98,8 @@ export default function Header() {
                 </Link>
               ))}
               <Link href="/contact" className="text-md font-bold text-black">
-                Связаться с нами
+                {t("contact_link")}
               </Link>
-              <LanguageSwitcher
-                value={locale}
-                onChange={handleLanguageChange}
-              />
             </nav>
           </SheetContent>
         </Sheet>
@@ -77,20 +107,22 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="cursor-pointer max-lg:w-full h-full flex justify-center lg:justify-start items-center"
+          className="cursor-pointer  h-full flex justify-center lg:justify-start items-center"
         >
           <Image
             height={100}
             width={100}
             className="w-20 h-16 object-contain"
             src="/assets/logo.webp"
-            alt="logo"
+            alt={t("logo_alt")}
             loading="eager"
           />
         </Link>
-        <Link href="/contact" className="lg:hidden text-end font-bold text-black">
-          Связаться с нами
-        </Link>
+        <div className="lg:hidden">
+
+        <LanguageSwitcher value={locale} onChange={handleLanguageChange} />
+        </div>
+
         {/* Desktop Nav */}
         <section className="max-lg:hidden flex items-center gap-4">
           <nav className="text-md lg:text-lg 2xl:text-xl flex justify-start items-center gap-7">
@@ -107,7 +139,7 @@ export default function Header() {
               </Link>
             ))}
             <Link href="/contact" className="font-bold text-black">
-              Связаться с нами
+              {t("contact_link")}
             </Link>
           </nav>
 

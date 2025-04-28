@@ -8,31 +8,43 @@ import { getTranslations } from "next-intl/server";
 
 export default async function ReviewsPage() {
   const t = await getTranslations("ReviewsPage");
+  const tT = await getTranslations("Reviews");
 
   const reviewsData = [
     {
       id: 1,
-      rating: 5,
-      text: t("review_1_text"),
-      name: t("review_1_name"),
-      level: t("review_1_level"),
-      image: "/home/avatar.webp",
+      name: tT("review_1_name"),
+      level: tT("review_1_position"),
+      text: tT("review_1_text"),
+      image: "/home/review1.webp",
     },
     {
       id: 2,
-      rating: 5,
-      text: t("review_2_text"),
-      name: t("review_2_name"),
-      level: t("review_2_level"),
-      image: "/home/avatar.webp",
+      name: tT("review_2_name"),
+      level: tT("review_2_position"),
+      text: tT("review_2_text"),
+      image: "/home/review2.webp",
     },
     {
       id: 3,
-      rating: 5,
-      text: t("review_3_text"),
-      name: t("review_3_name"),
-      level: t("review_3_level"),
-      image: "/assets/abgani.webp",
+      name: tT("review_3_name"),
+      level: tT("review_3_position"),
+      text: tT("review_3_text"),
+      image: "/home/review3.webp",
+    },
+    {
+      id: 4,
+      name: tT("review_4_name"),
+      level: tT("review_4_position"),
+      text: tT("review_4_text"),
+      image: "/home/review4.webp",
+    },
+    {
+      id: 5,
+      name: tT("review_5_name"),
+      level: tT("review_5_position"),
+      text: tT("review_5_text"),
+      image: "/home/review5.webp",
     },
   ];
 
@@ -52,7 +64,7 @@ export default async function ReviewsPage() {
       />
       <section className="flex flex-col max-w-[1440px] mx-auto w-11/12 relative z-10 gap-6 md:gap-8">
         <div className="flex flex-wrap justify-around w-full gap-10">
-          {reviewsData?.map((item, idx) => {
+          {reviewsData?.slice(0,3)?.map((item, idx) => {
             return (
               <div key={item.id} className="py-10">
                 <ReviewCard
@@ -67,7 +79,7 @@ export default async function ReviewsPage() {
           })}
         </div>
         <div className="flex flex-col justify-around w-full gap-5">
-          {reviewsData?.map((item, idx) => {
+          {reviewsData?.slice(3,5)?.map((item, idx) => {
             return (
               <div key={item.id} className="p-4">
                 <ReviewCardGoriz

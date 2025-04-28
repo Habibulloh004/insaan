@@ -14,15 +14,15 @@ export default async function Contact() {
   const socials = [
     {
       image: "/socials/facebook.webp",
-      link: "https://www.facebook.com/",
+      link: "https://www.facebook.com/share/1UpmwMGHZX/?mibextid=wwXIfr",
     },
     {
       image: "/socials/telegram.webp",
-      link: "https://telegram.org",
+      link: "https://t.me/insaanuz",
     },
     {
       image: "/socials/instagram.webp",
-      link: "https://www.instagram.com/",
+      link: "https://www.instagram.com/insaan_group?igsh=MWxzNGVmOHNheW5sYQ==",
     },
     {
       image: "/socials/google.webp",
@@ -75,10 +75,10 @@ export default async function Contact() {
                 <Link
                   prefetch={true}
                   target="_blank"
-                  href="mailto:insaan@gmail.com"
+                  href="mailto:insaanuzbekistan@gmail.com"
                   className="text-sm md:text-base hover:underline"
                 >
-                  {t("email_address")}
+                  insaanuzbekistan@gmail.com
                 </Link>
               </div>
             </li>

@@ -9,6 +9,7 @@ import {
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ImagesComponent } from "@/components/shared/ImagesComponent";
 
 // export const dynamic = 'force-static'
 
@@ -95,43 +96,10 @@ export default async function Blogs() {
           ))}
         </Accordion>
       </div>
-      <div className="max-md:hidden w-11/12 max-w-[1440px] mx-auto grid grid-cols-3 gap-4 px-4 md:px-0">
-        {images.map((image, idx) => {
-          let classNames = "relative w-full h-48 md:h-64";
-          if (idx === 0) classNames += "col-span-2 row-span-2 h-full md:h-auto";
-          return (
-            <div
-              key={idx}
-              className={classNames}
-              style={{
-                gridColumn: idx === 0 ? "span 2" : undefined,
-                gridRow: idx === 0 ? "span 2" : undefined,
-              }}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          );
-        })}
+      <div className="w-11/12 max-w-[1440px] mx-auto">
+        <ImagesComponent />
       </div>
-      <div className="md:hidden w-11/12 max-w-[1440px] mx-auto flex flex-col gap-4 px-4 md:px-0">
-        {images.map((image, idx) => {
-          return (
-            <div key={idx} className={"relative w-full aspect-[16/6]"}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          );
-        })}
-      </div>
+     
     </main>
   );
 }

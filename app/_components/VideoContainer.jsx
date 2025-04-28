@@ -22,7 +22,7 @@ export default function VideoContainer() {
             className="h-full"
             classNameImg="object-cover w-full md:h-[500px]"
             animationStyle="from-center"
-            videoSrc="/gallery.mp4"
+            videoSrc="/videos/gallery.mp4"
             thumbnailSrc="/home/videoImage.webp"
             thumbnailAlt="Hero Video"
           />

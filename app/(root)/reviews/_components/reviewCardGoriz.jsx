@@ -27,7 +27,7 @@ const ReviewCardGoriz = ({ image, name, rating, level, text }) => {
         </div>
 
         <h3 className="font-semibold text-lg text-gray-900">{name}</h3>
-        <p className="text-gray-500 text-sm">{level}</p>
+        {/* <p className="text-gray-500 text-sm">{level}</p> */}
       </div>
     </div>
   );

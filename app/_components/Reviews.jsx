@@ -7,42 +7,41 @@ import { useTranslations } from "next-intl";
 export default function Reviews() {
   const t = useTranslations("Reviews");
 
-  // Construct reviews array from flattened translation keys
   const reviews = [
     {
       id: 1,
       name: t("review_1_name"),
       position: t("review_1_position"),
       text: t("review_1_text"),
-      avatar: "/home/avatar.webp"
+      avatar: "/home/review1.webp"
     },
     {
       id: 2,
       name: t("review_2_name"),
       position: t("review_2_position"),
       text: t("review_2_text"),
-      avatar: "/home/avatar.webp"
+      avatar: "/home/review2.webp"
     },
     {
       id: 3,
       name: t("review_3_name"),
       position: t("review_3_position"),
       text: t("review_3_text"),
-      avatar: "/home/avatar.webp"
+      avatar: "/home/review3.webp"
     },
     {
       id: 4,
       name: t("review_4_name"),
       position: t("review_4_position"),
       text: t("review_4_text"),
-      avatar: "/home/avatar.webp"
+      avatar: "/home/review4.webp"
     },
     {
       id: 5,
       name: t("review_5_name"),
       position: t("review_5_position"),
       text: t("review_5_text"),
-      avatar: "/home/avatar.webp"
+      avatar: "/home/review5.webp"
     }
   ];
 
@@ -120,13 +119,13 @@ export default function Reviews() {
                     priority
                   />
                 </div>
-                <div className="flex flex-col animate-fadeIn">
+                <div className="line-clamp-2 max-w-[200px] flex flex-col animate-fadeIn">
                   <h3 className="font-medium text-gray-900 text-left text-sm sm:text-base">
                     {review.name}
                   </h3>
-                  <p className="text-gray-600 text-left text-xs sm:text-sm">
+                  {/* <p className="text-gray-600 text-left text-xs sm:text-sm">
                     {review.position}
-                  </p>
+                  </p> */}
                 </div>
               </button>
             ) : (

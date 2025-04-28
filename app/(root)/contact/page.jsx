@@ -4,13 +4,13 @@ import Link from "next/link";
 import React from "react";
 import MyForm from "./_components/contactForm";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 // export const dynamic = 'force-static'
 
 export default async function Contact() {
   const t = await getTranslations("Contact");
-
+  const locale = await getLocale();
   const socials = [
     {
       image: "/socials/facebook.webp",
@@ -107,11 +107,12 @@ export default async function Contact() {
         <section className="w-full lg:w-1/2 mt-8 lg:mt-0">
           <div className="w-full sm:w-[90%] lg:w-[45vw] mx-auto h-[250px] sm:h-[300px] md:h-[400px] mt-5 rounded-xl overflow-hidden border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d374.8446289002891!2d69.34387546746738!3d41.27062585091406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE2JzE0LjQiTiA2OcKwMjAnMzkuMiJF!5e0!3m2!1suz!2s!4v1745418159519!5m2!1suz!2s"
-              className="w-full h-full"
-              style={{ border: 0 }}
+              src={`https://yandex.uz/map-widget/v1/?ll=69.342099%2C41.276797&mode=whatshere&whatshere%5Bpoint%5D=69.342099%2C41.276797&z=18&lang=${locale}`}
+              width="100%"
+              height="100%"
+              frameBorder="1"
               allowFullScreen
-              loading="lazy"
+              style={{ position: "relative" }}
             ></iframe>
           </div>
           <div className="w-full flex justify-center sm:justify-between items-center gap-3 px-4 sm:px-8 py-4 mt-4 flex-wrap">

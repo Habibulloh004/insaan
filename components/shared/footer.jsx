@@ -118,7 +118,7 @@ export default function Footer() {
                   width={100}
                   height={100}
                 />
-                <h1>{t("instagram_handle")}</h1>
+                <h1>@insaan_group</h1>
               </Link>
               <Link
                 prefetch={true}
@@ -134,7 +134,7 @@ export default function Footer() {
                   width={100}
                   height={100}
                 />
-                <h1>{t("telegram_handle")}</h1>
+                <h1>@insaan_group</h1>
               </Link>
               <Link
                 prefetch={true}
@@ -150,7 +150,7 @@ export default function Footer() {
                   width={100}
                   height={100}
                 />
-                <h1>{t("facebook_handle")}</h1>
+                <h1>@insaan_group</h1>
               </Link>
             </ul>
           </div>

@@ -42,13 +42,7 @@ export default async function Blogs() {
       thumbnailAlt: t("testimonial_3_video_alt"),
     },
   ];
-
-  const images = [
-    { src: "/workers/blog1.webp", alt: t("image_1_alt") },
-    { src: "/workers/blog2.webp", alt: t("image_2_alt") },
-    { src: "/workers/blog3.webp", alt: t("image_3_alt") },
-  ];
-
+  
   return (
     <main className="space-y-8 md:space-y-12">
       <Hero

@@ -104,7 +104,12 @@ export default function Footer() {
           <div className="space-y-3 text-center md:text-left">
             <h1 className="font-medium">{t("social_heading")}</h1>
             <ul className="flex flex-col gap-3">
-              <Link prefetch={true} href="" className="flex items-center gap-2">
+              <Link
+                prefetch={true}
+                target="_blank"
+                href="https://www.instagram.com/insaan_group?igsh=MWxzNGVmOHNheW5sYQ=="
+                className="flex items-center gap-2"
+              >
                 <Image
                   src="/home/instagram.webp"
                   alt={t("instagram_alt")}
@@ -115,7 +120,12 @@ export default function Footer() {
                 />
                 <h1>{t("instagram_handle")}</h1>
               </Link>
-              <Link prefetch={true} href="" className="flex items-center gap-2">
+              <Link
+                prefetch={true}
+                target="_blank"
+                href="https://t.me/insaanuz"
+                className="flex items-center gap-2"
+              >
                 <Image
                   src="/home/telegram.webp"
                   alt={t("telegram_alt")}
@@ -126,7 +136,12 @@ export default function Footer() {
                 />
                 <h1>{t("telegram_handle")}</h1>
               </Link>
-              <Link prefetch={true} href="" className="flex items-center gap-2">
+              <Link
+                prefetch={true}
+                target="_blank"
+                href="https://www.facebook.com/share/1UpmwMGHZX/?mibextid=wwXIfr"
+                className="flex items-center gap-2"
+              >
                 <Image
                   src="/home/facebook.webp"
                   alt={t("facebook_alt")}

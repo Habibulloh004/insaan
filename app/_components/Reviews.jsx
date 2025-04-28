@@ -105,21 +105,20 @@ export default function Reviews() {
             {index === activeIndex ? (
               <button
                 onClick={() => handleReviewClick(index)}
-                className="flex items-center gap-2 sm:gap-3 focus:outline-none transition-all duration-300 scale-110 transform"
+                className="py-2 px-4 flex items-center gap-2 sm:gap-3 focus:outline-none transition-all duration-300 scale-110 transform"
                 aria-label={`View review from ${review.name}`}
               >
-                <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                <div className="relative w-16 h-16 sm:w-16 sm:h-16">
                   <Image
                     src={review.avatar}
                     alt={review.name}
                     fill
-                    sizes="(max-width: 640px) 40px, 48px"
-                    className="rounded-full object-cover border-2 border-blue-500 animate-pulse shadow-lg"
+                    className="w-48 h-48 rounded-full object-cover border-2 border-blue-500 animate-pulse shadow-lg"
                     loading="eager"
                     priority
                   />
                 </div>
-                <div className="line-clamp-2 max-w-[200px] flex flex-col animate-fadeIn">
+                <div className="line-clamp-2 max-w-[200px] max-sm:max-w-[150px] flex flex-col animate-fadeIn">
                   <h3 className="font-medium text-gray-900 text-left text-sm sm:text-base">
                     {review.name}
                   </h3>
@@ -134,13 +133,12 @@ export default function Reviews() {
                 className="opacity-60 hover:opacity-80 hover:scale-105 transition-all duration-300 focus:outline-none transform"
                 aria-label={`View review from ${review.name}`}
               >
-                <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                <div className="relative w-14 h-14 sm:w-14 sm:h-14">
                   <Image
                     src={review.avatar}
                     alt={review.name}
                     fill
-                    sizes="(max-width: 640px) 40px, 48px"
-                    className="rounded-full object-cover border-2 border-transparent hover:border-gray-300"
+                    className="w-48 h-48 rounded-full object-cover border-2 border-transparent hover:border-gray-300"
                     loading="eager"
                   />
                 </div>

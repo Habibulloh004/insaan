@@ -27,14 +27,14 @@ export default function Architectural({ workers }) {
       image: "/workers/ziyovuddin.webp",
     },
     {
-      name: tAbout("worker_5_name"),
-      level: tAbout("worker_5_level"),
-      image: "/workers/aziz.webp",
-    },
-    {
       name: tAbout("worker_6_name"),
       level: tAbout("worker_6_level"),
       image: "/workers/javohir.webp",
+    },
+    {
+      name: tAbout("worker_5_name"),
+      level: tAbout("worker_5_level"),
+      image: "/workers/aziz.webp",
     },
   ];
   const architectural = [

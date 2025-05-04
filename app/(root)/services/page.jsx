@@ -25,6 +25,11 @@ export default async function Services() {
       desc: t("service_3_desc"),
       image: "/home/services3.webp",
     },
+    {
+      title: t("service_4_title"),
+      desc: t("service_4_desc"),
+      image: "/assets/contactImage.webp",
+    },
   ];
 
   return (
@@ -45,7 +50,7 @@ export default async function Services() {
         <h1 className="textNormal5 font-[300] text-center md:text-left text-2xl md:text-3xl">
           {t("heading")}
         </h1>
-        <div className="grid gap-6 md:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center">
           {servicesData?.map((service, idx) => (
             <ServiceCard
               key={idx}

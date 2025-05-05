@@ -119,8 +119,8 @@
     "email_placeholder": "programmer@gmail.com",
     "phone_label": "Telefon raqami",
     "phone_placeholder": "Telefon",
-    "service_label":"Xizmatlar",
-    "service_placeholder":"Xizmatni tanlang",
+    "service_label": "Xizmatlar",
+    "service_placeholder": "Xizmatni tanlang",
     "submit_button": "Yuborish",
     "zod_full_name": "To'liq ismingizni kiriting",
     "zod_service": "Xizmatni tanlashingiz kerak",
@@ -181,6 +181,11 @@
     "nav_link_3": "Biz haqimizda",
     "nav_link_4": "Sharhlar",
     "nav_link_5": "Blog"
+  },
+  "Projects": {
+    "hero_title": "Bizning loyihalar",
+    "hero_description": "Bizning loyihalar galereyasi",
+    "title": "Me’morlarimiz tomonidan yaratilgan loyihalar"
   },
   "Header": {
     "logo_alt": "INSAAN logotipi",

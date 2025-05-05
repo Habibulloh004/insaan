@@ -53,6 +53,11 @@ export default function Header() {
       name: t("nav_link_5"),
       link: "/blogs",
     },
+    {
+      id: 6,
+      name: t("nav_link_7"),
+      link: "/projects",
+    },
   ];
 
   const handleLanguageChange = (newLocale) => {

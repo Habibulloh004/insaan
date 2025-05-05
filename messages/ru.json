@@ -182,6 +182,11 @@
     "nav_link_4": "Отзывы",
     "nav_link_5": "Блог"
   },
+  "Projects": {
+    "hero_title": "Наши проекты",
+    "hero_description":"Галерея наших проектов",
+    "title":"Проекты созданные нашими архитекторами"
+  },
   "Header": {
     "logo_alt": "Логотип INSAAN",
     "contact_link": "Связаться с нами",
@@ -190,7 +195,8 @@
     "nav_link_3": "О нас",
     "nav_link_4": "Отзывы",
     "nav_link_5": "Блог",
-    "nav_link_6": "Лицензия"
+    "nav_link_6": "Лицензия",
+    "nav_link_7": "Проекты"
   },
   "VideoContainer": {
     "title": "Галерея проектов",

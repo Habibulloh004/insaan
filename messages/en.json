@@ -70,7 +70,9 @@
     "worker_5_name": "Isamukhamedov Aziz",
     "worker_5_level": "Developer",
     "worker_6_name": "Isamukhamedov Jahongir",
-    "worker_6_level": "Chief Project Engineer"
+    "worker_6_level": "Chief Project Engineer",
+    "worker_7_name": "Ismoil Mahkamov",
+    "worker_7_level": "Chief Project Engineer"
   },
   "Construction": {
     "hero_title": "Construction and builders license",
@@ -181,6 +183,11 @@
     "nav_link_3": "About us",
     "nav_link_4": "Reviews",
     "nav_link_5": "Blog"
+  },
+  "Projects": {
+    "hero_title": "Our Projects",
+    "hero_description": "Gallery of our projects",
+    "title": "Projects created by our architects"
   },
   "Header": {
     "logo_alt": "INSAAN logo",

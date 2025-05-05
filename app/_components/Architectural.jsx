@@ -22,9 +22,9 @@ export default function Architectural({ workers }) {
       image: "/workers/davronboy.webp",
     },
     {
-      name: tAbout("worker_3_name"),
-      level: tAbout("worker_3_level"),
-      image: "/workers/ziyovuddin.webp",
+      name: tAbout("worker_7_name"),
+      level: tAbout("worker_7_level"),
+      image: "/workers/ismoil.webp",
     },
     {
       name: tAbout("worker_6_name"),

@@ -21,9 +21,9 @@ export default async function AboutUs() {
       image: "/workers/davronboy.webp",
     },
     {
-      name: t("worker_3_name"),
-      level: t("worker_3_level"),
-      image: "/workers/ziyovuddin.webp",
+      name: t("worker_7_name"),
+      level: t("worker_7_level"),
+      image: "/workers/ismoil.webp",
     },
     {
       name: t("worker_6_name"),

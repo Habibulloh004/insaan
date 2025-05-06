@@ -2,7 +2,7 @@
 
 import { BlurFade } from "../magicui/blur-fade";
 
-const images = Array.from({ length: 30 }, (_, i) => {
+const images = Array.from({ length: 19 }, (_, i) => {
   const isLandscape = i % 2 === 0;
   const width = isLandscape ? 800 : 600;
   const height = isLandscape ? 600 : 800;
